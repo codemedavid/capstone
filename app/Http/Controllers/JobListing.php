@@ -7,7 +7,7 @@ use Inertia\Inertia;
 
 class JobListing extends Controller
 {
-    public function lists(){
+    public function joblists(){
         return Inertia::render('Posts/JobListing');
     }
 }

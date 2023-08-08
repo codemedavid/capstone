@@ -6,7 +6,7 @@ use App\Http\Controllers\JobListing;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\ApplicantLists;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,8 +27,8 @@ Route::get('/', function () {
     ]);
 });
 
-
-Route::get('/jobs', [JobListing::class, 'lists'])->name('post.listings');
+Route::get('/applicants', [ApplicantLists::class, 'ApplicantLists'])->name('post.applicants');
+Route::get('/jobs', [JobListing::class, 'joblists'])->name('post.listings');
 Route::get('/posts', [PostController::class, 'index'])->name('post.index');
 Route::get('/posts/new', [PostController::class, 'new'])->name('post.new');
 Route::get('/dashboard', function () {
