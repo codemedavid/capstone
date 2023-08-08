@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import JobCards from '@/Components/JobCards'
+import FeaturedCompanies from '@/Components/FeaturedCompanies'
 function PostComponent() {
  
   return (
@@ -50,7 +51,7 @@ function PostComponent() {
             <input type="text" placeholder="Look for Portfolios" className="input input-bordered input-primary w-full max-w-xs" />
             </div>
             <div className='w-[100px] flex'>
-            <JobCards></JobCards>
+          <FeaturedCompanies></FeaturedCompanies>
             </div>
           </div>
         </div>
