@@ -42,7 +42,7 @@ function Header() {
       <a className="btn mx-2 bg-blue-700 text-white" href='/login'>Post Jobs</a>
       <a className="btn bg-green-500 text-white">Find Jobs</a>
     </div>
-  
+  <div className='w-[200px]'></div>
     
   </div>
   )
