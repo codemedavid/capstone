@@ -2,7 +2,11 @@ import React from 'react'
 
 function JobCards() {
   return (
-    <div></div>
+    <div>
+         {
+        //Sir Jerome
+      }
+    </div>
   )
 }
 
