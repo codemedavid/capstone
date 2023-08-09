@@ -2,10 +2,10 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className="navbar bg-base-100 sticky top-1">
+    <div className="navbar bg-transparent sticky top-0 z-50">
     <div className="navbar-start z-50">
      
-      <a className="btn btn-ghost normal-case text-xl z-50" href='/posts'>JOB ERA</a>
+      <a className="btn btn-ghost normal-case text-xl z-50" href='/'>JOB ERA</a>
     </div>
     <div className="navbar-center hidden lg:flex z-50">
       <ul className="menu menu-horizontal px-1">
