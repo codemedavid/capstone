@@ -2,8 +2,9 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className="navbar bg-transparent sticky top-0 z-50">
-    <div className="navbar-start z-50">     
+    <div className="navbar bg-gray-50 sticky top-0 z-50">
+    <div className="navbar-start z-50">
+     
       <a className="btn btn-ghost normal-case text-xl z-50" href='/'>JOB ERA</a>
     </div>
     <div className="navbar-center hidden lg:flex z-50 justify-between">
