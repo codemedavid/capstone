@@ -13,7 +13,7 @@ function CardApplicants() {
                             </div>
                         </div>
                     </div>
-                    <div className="col flex justify-center">
+                    <div className="col flex justify-center mb-3">
                         <h3 className="card-title">Royce Wuffy</h3>
                     </div>
                 </div>
