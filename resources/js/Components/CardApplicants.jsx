@@ -5,16 +5,16 @@ function CardApplicants() {
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl my-1">
-                <div className="row">
+                <div className="row w-2/5">
                     <div className="col">
                         <div className="avatar">
-                            <div className="w-24 rounded-full mt-5 ml-5 my-3">
+                            <div className="w-2/3 rounded-full mx-auto my-3">
                                 <img src="https://i.pinimg.com/1200x/b3/8c/b4/b38cb443bff8ba204fd6c2c075135d3e.jpg" />
                             </div>
                         </div>
                     </div>
-                    <div className="col my-2 ">
-                        <h3 className="mx-2">Royce Wuffy</h3>
+                    <div className="col flex justify-center">
+                        <h3 className="card-title">Royce Wuffy</h3>
                     </div>
                 </div>
 
