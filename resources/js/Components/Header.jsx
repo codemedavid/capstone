@@ -13,7 +13,7 @@ function Header() {
         <li >
           <a href="/applicants">Applicants</a>
         </li>
-        <li><a>Item 3</a></li>
+        <li><a href='/apply'>Apply</a></li>
       </ul>
     </div>
     <div className="navbar-end z-50">
