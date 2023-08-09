@@ -1,5 +1,5 @@
 import React from "react";
-import { EyeIcon } from "@heroicons/react/24/outline";
+import { EyeIcon, HeartIcon } from "@heroicons/react/24/outline";
 
 function CardApplicants() {
     return (
@@ -13,22 +13,22 @@ function CardApplicants() {
                             </div>
                         </div>
                     </div>
-                    <div className="col ml-5 my-3">
-                        <h3 className="mx-5">Royce Wuffy</h3>
+                    <div className="col my-2 ">
+                        <h3 className="mx-2">Royce Wuffy</h3>
                     </div>
                 </div>
 
                 <div className="card-body py-0">
                     <br />
-                    <h3 className="card-title">Job Title</h3>
+                    <h2 className="card-title">Job Title</h2>
                     <p >Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.</p>
                     <p >Click the button to listen on Spotiwhy app.</p>
-                    <p >Click the button to listen on Spotiwhy app.</p>
-                    <p >Click the button to listen on Spotiwhy app.</p>
+                    <h3 className="card-title mb-3">Skills</h3>
+                   
                     
 
                     <div className="row card-actions justify-end mb-3">
-                        <button className="btn-sm rounded-lg ring-2 ring-sky-700 hover:bg-sky-500 hover:text-white"> <EyeIcon className="w-5 inline mr-1"/>View Profile</button>
+                        <HeartIcon className="w-7 mr-2 hover:text-red-900 hover:fill-red-600"/><button className="btn-sm rounded-lg ring-2 ring-sky-700 hover:bg-sky-500 hover:text-white"> <EyeIcon className="w-5 inline mr-1"/>View Profile</button>
                     </div>
                 </div>
             </div>
