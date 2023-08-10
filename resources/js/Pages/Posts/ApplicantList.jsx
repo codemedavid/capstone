@@ -58,6 +58,21 @@ function ApplicantList() {
                                 </a>
                             </li>
                             <li>
+                                <div class="mb-3">
+                                    <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+                                        <input
+                                            type="search"
+                                            class="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+                                            placeholder="Search"
+                                            aria-label="Search"
+                                            aria-describedby="button-addon3"
+                                        />
+
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
                                 <a
                                     href="#"
                                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
@@ -214,6 +229,8 @@ function ApplicantList() {
                     </div>
                 </div>
 
+                <br />
+                <br />
                 <br />
             </div>
             <Footer></Footer>

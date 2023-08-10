@@ -5,7 +5,7 @@ function CardApplicants() {
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl my-1">
-                <div className="row w-2/5">
+                <div className="row w-1/2">
                     <div className="col">
                         <div className="avatar">
                             <div className="w-2/3 rounded-full mx-auto my-3">
@@ -22,9 +22,15 @@ function CardApplicants() {
                     <br />
                     <h2 className="card-title">Job Title</h2>
                     <p >Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.</p>
-                    <p >Click the button to listen on Spotiwhy app.</p>
-                    <h3 className="card-title mb-3">Skills</h3>
-                   
+                    <h3 className="card-title mb-0">Skills</h3>
+                    <div className="row mt-0">
+
+                    <span className="hover:bg-orange-500 hover:text-white bg-orange-400 border-spacing-x-28 px-1 py-1 rounded-lg mr-1 text-sm">JavaScript</span> 
+                    <span className="hover:bg-blue-500 hover:text-white bg-blue-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm mr-1">JavaScript</span> 
+                    <span className="hover:bg-green-500 hover:text-white bg-green-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm">JavaScript</span> 
+                    
+                    
+                    </div>
                     
 
                     <div className="row card-actions justify-end mb-3">
