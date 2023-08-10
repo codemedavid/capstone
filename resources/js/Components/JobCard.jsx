@@ -22,7 +22,7 @@ function JobCard(props) {
                     <img
                         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                         alt="card-image"
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full duration-1000 hover:scale-125"
                     />
                 </CardHeader>
                 <CardBody>
@@ -45,8 +45,14 @@ function JobCard(props) {
                         story
                     </Typography>
                     <div className="flex justify-between">
-                        <button>More Info</button>
-                        <h1>{props.vacancy} Vacancies</h1>
+                        <a href="/job-overview">
+                            <button className="text-blue-600 duration-500 hover:scale-125">
+                                More Info
+                            </button>
+                        </a>
+                        <h2 className="text-emerald-500">
+                            {props.vacancy} Vacancies
+                        </h2>
                     </div>
                 </CardBody>
             </Card>

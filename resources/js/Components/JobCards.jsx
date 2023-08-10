@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 
 function JobCards() {
     return (
-        <div className="max-w-[1440px] mx-auto grid lg:grid-cols-3 gap-4 pt-8">
+        <div className="max-w-[1440px] mx-4 lg:mx-auto grid lg:grid-cols-3 gap-4 pt-8">
             {/* <-- LEFT --> */}
             <div className="flex w-full p-4 bg-gray-100 lg:col-span-2 rounded-xl">
                 <div className="w-full">
