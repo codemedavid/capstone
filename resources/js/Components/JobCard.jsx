@@ -9,6 +9,7 @@ import {
     PopoverContent,
     Button,
 } from "@material-tailwind/react";
+import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 function JobCard(props) {
     return (
@@ -44,15 +45,21 @@ function JobCard(props) {
                         its own business model disruption is only part of the
                         story
                     </Typography>
-                    <div className="flex justify-between">
-                        <a href="/job-overview">
-                            <button className="text-blue-600 duration-500 hover:scale-125">
-                                More Info
-                            </button>
-                        </a>
-                        <h2 className="text-emerald-500">
-                            {props.vacancy} Vacancies
-                        </h2>
+                    <div className="flex justify-between w-full">
+                        <div>
+                            <a
+                                href="/job-overview"
+                                className="flex text-blue-600 duration-500 hover:scale-125 "
+                            >
+                                <button>More Info</button>
+                                <ArrowLongRightIcon className="w-6 h-6 " />
+                            </a>
+                        </div>
+                        <div>
+                            <h2 className="text-emerald-500">
+                                {props.vacancy} Vacancies
+                            </h2>
+                        </div>
                     </div>
                 </CardBody>
             </Card>
