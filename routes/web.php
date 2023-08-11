@@ -19,7 +19,7 @@ use App\Http\Controllers\ApplicantLists;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -31,7 +31,7 @@ Route::get('/', function () {
 Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply');
 Route::get('/applicants', [ApplicantLists::class, 'ApplicantLists'])->name('post.applicants');
 Route::get('/jobs', [JobListing::class, 'joblists'])->name('post.listings');
-Route::get('/posts', [PostController::class, 'index'])->name('post.index');
+Route::get('/', [PostController::class, 'index'])->name('post.index');
 Route::get('/posts/new', [PostController::class, 'new'])->name('post.new');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
