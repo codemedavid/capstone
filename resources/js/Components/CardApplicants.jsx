@@ -26,8 +26,8 @@ function CardApplicants() {
                     <div className="row mt-0">
 
                     <span className="hover:bg-orange-500 hover:text-white bg-orange-400 border-spacing-x-28 px-1 py-1 rounded-lg mr-1 text-sm">JavaScript</span> 
-                    <span className="hover:bg-blue-500 hover:text-white bg-blue-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm mr-1">JavaScript</span> 
-                    <span className="hover:bg-green-500 hover:text-white bg-green-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm">JavaScript</span> 
+                    <span className="hover:bg-blue-500 hover:text-white bg-blue-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm mr-1">React</span> 
+                    <span className="hover:bg-green-500 hover:text-white bg-green-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm">PHP</span> 
                     
                     
                     </div>
