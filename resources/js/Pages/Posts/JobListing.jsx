@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "@/Components/Header";
 import JobCards from "@/Components/JobCards";
-function JobListing() {
+
+function JobListing({ jobs }) {
     return (
         <div>
             <Header></Header>
-            <JobCards />
+            <JobCards jobs={jobs} />
         </div>
     );
 }

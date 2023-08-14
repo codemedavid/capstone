@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\JobListing;
+use App\Http\Controllers\JobListingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,10 +36,16 @@ Route::get('/hello', function(){
 });
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
 Route::get('/jerome', [JeromePage::class, 'JeromePage'])->name('jobs.page');
-Route::get('/job-overview', [JobOverview::class, 'JobOverview'])->name('joboverview.page');
+
 Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply')->middleware(['auth', 'verified']);
 Route::get('/applicants', [ApplicantLists::class, 'ApplicantLists'])->name('post.applicants');
-Route::get('/jobs', [JobListing::class, 'joblists'])->name('post.listings');
+
+Route::get('/job-overview/{id}', [JobOverview::class, 'JobOverview'])->name('joboverview.page');
+Route::get('/joblists', [JobListingController::class, 'joblists'])->name('joblists');
+Route::get('/joblists/create', [JobListingController::class, 'create'])->name('joblists.create');
+Route::post('/joblists', [JobListingController::class, 'store'])->name('joblists.store');
+
+
 Route::get('/', [PostController::class, 'index'])->name('post.index');
 Route::get('/posts/new', [PostController::class, 'new'])->name('post.new');
 Route::get('/dashboard', function () {

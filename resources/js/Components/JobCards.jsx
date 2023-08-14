@@ -3,7 +3,7 @@ import { Checkbox } from "@material-tailwind/react";
 
 import JobCard from "./JobCard";
 
-function JobCards() {
+function JobCards({ jobs }) {
     return (
         <div className="max-w-[1440px] mx-4 lg:mx-auto grid lg:grid-cols-3 gap-4 pt-8">
             {/* <-- LEFT --> */}
@@ -50,21 +50,14 @@ function JobCards() {
                         </div>
                     </form>
                     <div className="flex-col mt-8">
-                        <JobCard
-                            title="Admin Support"
-                            company="TeleTech"
-                            vacancy="4"
-                        />
-                        <JobCard
-                            title="Customer Service"
-                            company="City of Dreams Manila"
-                            vacancy="7"
-                        />
-                        <JobCard
-                            title="Customer Service"
-                            company="TeleTech"
-                            vacancy="3"
-                        />
+                        {jobs.map((job) => (
+                            <JobCard
+                                id={job.id}
+                                title={job.jtitle}
+                                employer={job.employer}
+                                salary={job.salary}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
