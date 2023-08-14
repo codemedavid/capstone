@@ -7,9 +7,10 @@ import { CgCalendarDates } from "react-icons/cg";
 import { BiDetail } from "react-icons/bi";
 import { Button } from "@material-tailwind/react";
 
-function JobOverview() {
+function JobOverview({ joverview }) {
     return (
         <>
+            {JSON.stringify(joverview)}
             <div className="max-w-[1440px] mx-auto  lg:flex  lg:justify-center">
                 <div className="gap-4 p-4 mx-2 mt-4 bg-blue-400 lg:flex rounded-xl lg:mx-0">
                     <div className="mb-2 lg:border-r-2 lg:mb-0 lg:pr-4">
