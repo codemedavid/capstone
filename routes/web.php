@@ -28,6 +28,10 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/hello', function(){
+    return 'Hello World';
+});
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
 Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply')->middleware(['auth', 'verified']);
 Route::get('/applicants', [ApplicantLists::class, 'ApplicantLists'])->name('post.applicants');
