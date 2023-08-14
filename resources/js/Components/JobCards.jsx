@@ -1,53 +1,13 @@
 import React from "react";
 import { Checkbox } from "@material-tailwind/react";
-import { Textarea, Button, IconButton } from "@material-tailwind/react";
+
 import JobCard from "./JobCard";
 
 function JobCards() {
     return (
-        <div className="py-24 max-w-[1440px] mx-auto grid grid-cols-3 gap-4">
+        <div className="max-w-[1440px] mx-4 lg:mx-auto grid lg:grid-cols-3 gap-4 pt-8">
             {/* <-- LEFT --> */}
-            <div className="flex col-span-1 gap-4 bg-gray-100 rounded-xl max-h-[520px]">
-                <div className="w-full p-4 border rounded-xl">
-                    <div className="">
-                        <h2>Filter By:</h2>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" /> <h1>Full-Time</h1>
-                    </div>
-                    <div className="flex gap-4 pb-4 border-b-4 border-emerald-400">
-                        <Checkbox color="green" /> <h1>Part-Time</h1>
-                    </div>
-                    <div className="mt-4">
-                        <h2>Category:</h2>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" /> <h1>Admin Support</h1>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" /> <h1>Customer Service</h1>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" /> <h1>Admin Support</h1>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" /> <h1>Customer Service</h1>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" /> <h1>Design & Creative</h1>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" />
-                        <h1>Engineering & Architecture</h1>
-                    </div>
-                    <div className="flex gap-4 my-4">
-                        <Checkbox color="green" />
-                        <h1>Web, Mobile & Software Dev</h1>
-                    </div>
-                </div>
-            </div>
-            {/* <-- RIGHT --> */}
-            <div className="flex w-full col-span-2 p-4 bg-gray-100 rounded-xl">
+            <div className="flex w-full p-4 bg-gray-100 lg:col-span-2 rounded-xl">
                 <div className="w-full">
                     <form className="">
                         <label
@@ -90,9 +50,62 @@ function JobCards() {
                         </div>
                     </form>
                     <div className="flex-col mt-8">
-                        <JobCard title="Admin Support" company="TeleTech" />
-                        <JobCard title="Customer Service" company="TeleTech" />
-                        <JobCard title="Customer Service" company="TeleTech" />
+                        <JobCard
+                            title="Admin Support"
+                            company="TeleTech"
+                            vacancy="4"
+                        />
+                        <JobCard
+                            title="Customer Service"
+                            company="City of Dreams Manila"
+                            vacancy="7"
+                        />
+                        <JobCard
+                            title="Customer Service"
+                            company="TeleTech"
+                            vacancy="3"
+                        />
+                    </div>
+                </div>
+            </div>
+            {/* <-- RIGHT --> */}
+            <div className="flex col-span-1 gap-4 bg-gray-100 rounded-xl max-h-[560px] justify-center">
+                <div className="w-full p-4 border rounded-xl">
+                    <div className="">
+                        <h2>Filter By:</h2>
+                    </div>
+                    <div className="flex items-center gap-2 my-4">
+                        <Checkbox color="green" />
+                        <h1 className="text-center">Full-Time</h1>
+                    </div>
+                    <div className="flex items-center gap-2 pb-4 border-b-4 border-emerald-400">
+                        <Checkbox color="green" /> <h1>Part-Time</h1>
+                    </div>
+                    <div className="mt-4">
+                        <h2>Category:</h2>
+                    </div>
+                    <div className="flex items-center gap-1 ">
+                        <Checkbox color="green" /> <h1>Admin Support</h1>
+                    </div>
+                    <div className="flex items-center gap-1 ">
+                        <Checkbox color="green" /> <h1>Customer Service</h1>
+                    </div>
+                    <div className="flex items-center gap-1 ">
+                        <Checkbox color="green" /> <h1>Admin Support</h1>
+                    </div>
+                    <div className="flex items-center gap-1 ">
+                        <Checkbox color="green" /> <h1>Customer Service</h1>
+                    </div>
+                    <div className="flex items-center gap-1 ">
+                        <Checkbox color="green" /> <h1>Design & Creative</h1>
+                    </div>
+                    <div className="flex items-center gap-1 ">
+                        <Checkbox color="green" />
+                        <h1>Engineering & Architecture</h1>
+                    </div>
+                    <div className="flex items-center gap-21">
+                        <Checkbox color="green" />
+                        <h1>Web, Mobile & Software Dev</h1>
                     </div>
                 </div>
             </div>

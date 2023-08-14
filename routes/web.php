@@ -9,6 +9,8 @@ use Inertia\Inertia;
 use App\Http\Controllers\Apply;
 use App\Http\Controllers\ApplicantLists;
 use App\Http\Controllers\NewPage;
+use App\Http\Controllers\JeromePage;
+use App\Http\Controllers\JobOverview;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +31,8 @@ Route::get('/welcome', function () {
     ]);
 });
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
+Route::get('/jerome', [JeromePage::class, 'JeromePage'])->name('jobs.page');
+Route::get('/job-overview', [JobOverview::class, 'JobOverview'])->name('joboverview.page');
 Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply')->middleware(['auth', 'verified']);
 Route::get('/applicants', [ApplicantLists::class, 'ApplicantLists'])->name('post.applicants');
 Route::get('/jobs', [JobListing::class, 'joblists'])->name('post.listings');
