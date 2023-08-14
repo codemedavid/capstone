@@ -48,7 +48,7 @@ function JobCard(props) {
                     <div className="flex justify-between w-full">
                         <div>
                             <a
-                                href="/job-overview"
+                                href={`/job-overview/${props.id}`}
                                 className="flex text-blue-600 duration-500 hover:scale-125 "
                             >
                                 <button>More Info</button>
