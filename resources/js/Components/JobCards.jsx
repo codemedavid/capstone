@@ -52,10 +52,13 @@ function JobCards({ jobs }) {
                     <div className="flex-col mt-8">
                         {jobs.map((job) => (
                             <JobCard
+                                key={job.id}
                                 id={job.id}
                                 title={job.jtitle}
+                                jdescription={job.jdescription}
                                 employer={job.employer}
                                 salary={job.salary}
+                                vacancy={job.vacancy}
                             />
                         ))}
                     </div>
