@@ -30,6 +30,10 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/hello', function(){
+    return 'Hello World';
+});
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
 Route::get('/jerome', [JeromePage::class, 'JeromePage'])->name('jobs.page');
 
