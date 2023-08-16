@@ -1,30 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Header() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
-        <div className="sticky top-0 z-50 navbar bg-gray-50">
-            <div className="z-50 navbar-start">
-                <a className="z-50 text-xl normal-case btn btn-ghost" href="/">
-                    JOB ERA
-                </a>
+        <div className="sticky top-0 z-50 bg-slate-50">
+            <div className="container mx-auto flex justify-between items-center py-4 px-2">
+                <div className="text-black text-2xl font-semibold px-4">
+                    <a href="/">JOB ERA</a>
+                </div>
+                <div className="hidden lg:flex space-x-6 justify-center items-center">
+                    <a className="text-black hover:text-gray-300" href="/joblists">
+                        Jobs
+                    </a>
+                    <a className="text-black hover:text-gray-300" href="/applicants">
+                        Applicants
+                    </a>
+                    <a className="text-black hover:text-gray-300" href="/apply">
+                        Apply
+                    </a>
+                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href="/login">
+                        Post Jobs
+                    </a>
+                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded">Find Jobs</a>
+                </div>
+                <div className="lg:hidden">
+                    <button
+                        onClick={toggleMenu}
+                        className="text-black hover:text-gray-300 focus:outline-none focus:text-gray-300"
+                    >
+                        <svg
+                            className="h-6 w-6 fill-current"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            {menuOpen ? (
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M19 13H5v-2h14v2zm0-7H5V4h14v2zm0 14H5v-2h14v2z"
+                                />
+                            ) : (
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M4 5h16v2H4V5zm0 4h16v2H4V9zm0 4h16v2H4v-2z"
+                                />
+                            )}
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div className="z-50 justify-between hidden navbar-center lg:flex">
-                <ul className="px-1 menu menu-horizontal">
-                    <li>
-                        <a href="/joblists">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="/applicants">Applicants</a>
-                    </li>
-                    <li>
-                        <a href="/apply">Apply</a>
-                    </li>
-                </ul>
-                <a className="mx-2 text-white bg-blue-700 btn" href="/login">
-                    Post Jobs
-                </a>
-                <a className="text-white bg-green-500 btn">Find Jobs</a>
-            </div>
+            {menuOpen && (
+                <div className="lg:hidden bg-gray-800 py-2">
+                    <a className="block px-4 py-2 text-white" href="/joblists">
+                        Jobs
+                    </a>
+                    <a className="block px-4 py-2 text-white" href="/applicants">
+                        Applicants
+                    </a>
+                    <a className="block px-4 py-2 text-white" href="/apply">
+                        Apply
+                    </a>
+                    <a className="inline mx-2 mt-4 px-4 py-2 text-white bg-blue-700 rounded" href="/login">
+                        Post Jobs
+                    </a>
+                    <a className="inline  px-4 py-2 text-white bg-green-500 rounded">Find Jobs</a>
+                </div>
+            )}
         </div>
     );
 }
