@@ -11,6 +11,6 @@ class ApplicantLists extends Controller
     {
         $user = auth()->user();
       
-        return Inertia::render('Posts/ApplicantList', ['userType' => $user->user_type]);
+        return Inertia::render('Posts/ApplicantList');
     }
 }

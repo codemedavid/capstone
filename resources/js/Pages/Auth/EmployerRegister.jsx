@@ -11,8 +11,8 @@ export default function EmployerRegister() {
         name: '',
         email: '',
         password: '',
-        user_type: 'employer',
         password_confirmation: '',  
+        user_type: 'employer',
     });
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function EmployerRegister() {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'));
+        post(route('register.employer'));
     };
 
     return (
