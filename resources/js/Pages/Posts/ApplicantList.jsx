@@ -3,11 +3,12 @@ import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import CardApplicants from "@/Components/CardApplicants";
 
-function ApplicantList() {
+function ApplicantList({userType}) {
+    console.log(userType)
     return (
         <div>
             <Header></Header>
-
+ 
             <div className="md:container md:mx-auto  mt-5">
                 <button
                     data-drawer-target="default-sidebar"
