@@ -56,11 +56,15 @@ function JobCards({ jobs }) {
                         {jobs
                             .filter((items) => {
                                 return (
-                                    search.toLocaleLowerCase() === ""
-                                        ? items
-                                        : items.jtitle,
-                                    items.vacancy
-                                        .toLocaleLowerCase()
+                                    search.toLowerCase() === "" ||
+                                    items.jtitle
+                                        .toLowerCase()
+                                        .includes(search) ||
+                                    items.employer
+                                        .toLowerCase()
+                                        .includes(search) ||
+                                    items.typeofwork
+                                        .toLowerCase()
                                         .includes(search)
                                 );
                             })
