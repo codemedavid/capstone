@@ -1,51 +1,85 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function Header() {
-  return (
-    <div className="navbar bg-base-100 absolute ">
-    <div className="navbar-start z-50">
-      <div className="dropdown">
-        <label tabIndex={0} className="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-        </label>
-        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Item 1</a></li>
-          <li>
-            <a>Parent</a>
-            <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </li>
-          <li><a>Item 3</a></li>
-        </ul>
-      </div>
-      <a className="btn btn-ghost normal-case text-xl z-50">JOB ERA</a>
-    </div>
-    <div className="navbar-center hidden lg:flex z-50">
-      <ul className="menu menu-horizontal px-1">
-        <li><a>Item 1</a></li>
-        <li tabIndex={0}>
-          <details>
-            <summary>Parent</summary>
-            <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <div className="navbar-end z-50">
-    
-      <a className="btn mx-2 bg-blue-700 text-white" href='/login'>Post Jobs</a>
-      <a className="btn bg-green-500 text-white">Find Jobs</a>
-    </div>
-  <div className='w-[200px]'></div>
-    
-  </div>
-  )
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+   const userType = localStorage.getItem('userType')
+    return (
+        <div className="sticky top-0 z-50 bg-slate-50">
+            <div className="container mx-auto flex justify-between items-center py-4 px-2">
+                <div className="text-black text-2xl font-semibold px-4">
+                    <a href="/">JOB ERA</a>
+                </div>
+                <div className="hidden lg:flex space-x-6 justify-center items-center">
+                {
+                        userType == 'employer' ? '' :  <a className="text-black hover:text-gray-300" href="/joblists">
+                      Jobs
+                      </a>
+                }
+                   
+                    <a className="text-black hover:text-gray-300" href="/applicants">
+                        Applicants
+                    </a>
+                    {
+                        userType == 'employer' ? '' : <a className="text-black hover:text-gray-300" href="/apply">
+                      Apply
+                      </a>
+                       }
+                   
+                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href="/login">
+                        Post Jobs
+                    </a>
+                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded">Find Jobs</a>
+                </div>
+                <div className="lg:hidden">
+                    <button
+                        onClick={toggleMenu}
+                        className="text-black hover:text-gray-300 focus:outline-none focus:text-gray-300"
+                    >
+                        <svg
+                            className="h-6 w-6 fill-current"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            {menuOpen ? (
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M19 13H5v-2h14v2zm0-7H5V4h14v2zm0 14H5v-2h14v2z"
+                                />
+                            ) : (
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M4 5h16v2H4V5zm0 4h16v2H4V9zm0 4h16v2H4v-2z"
+                                />
+                            )}
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            {menuOpen && (
+                <div className="lg:hidden bg-gray-800 py-2">
+                    <a className="block px-4 py-2 text-white" href="/joblists">
+                        Jobs
+                    </a>
+                    <a className="block px-4 py-2 text-white" href="/applicants">
+                        Applicants
+                    </a>
+                    <a className="block px-4 py-2 text-white" href="/apply">
+                        Apply
+                    </a>
+                    <a className="inline mx-2 mt-4 px-4 py-2 text-white bg-blue-700 rounded" href="/login">
+                        Post Jobs
+                    </a>
+                    <a className="inline  px-4 py-2 text-white bg-green-500 rounded">Find Jobs</a>
+                </div>
+            )}
+        </div>
+    );
 }
 
-export default Header
+export default Header;

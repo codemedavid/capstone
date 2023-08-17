@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_type',
     ];
 
     /**
@@ -42,4 +42,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Define user type constants
+    const USER_TYPE_APPLICANT = 'applicant';
+    const USER_TYPE_EMPLOYER = 'employer';
+    const USER_TYPE_ADMIN = 'admin';
+
+    // Relationships
+    public function applicantProfile()
+    {
+        return $this->hasOne(ApplicantProfile::class);
+    }
+
+    public function employerProfile()
+    {
+        return $this->hasOne(EmployerProfile::class);
+    }
+
+    // Add more relationships based on your requirements
 }
