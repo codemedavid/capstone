@@ -6,7 +6,7 @@ function Header() {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
-
+   const userType = localStorage.getItem('userType')
     return (
         <div className="sticky top-0 z-50 bg-slate-50">
             <div className="container mx-auto flex justify-between items-center py-4 px-2">
@@ -14,15 +14,21 @@ function Header() {
                     <a href="/">JOB ERA</a>
                 </div>
                 <div className="hidden lg:flex space-x-6 justify-center items-center">
-                    <a className="text-black hover:text-gray-300" href="/joblists">
-                        Jobs
-                    </a>
+                {
+                        userType == 'employer' ? '' :  <a className="text-black hover:text-gray-300" href="/joblists">
+                      Jobs
+                      </a>
+                }
+                   
                     <a className="text-black hover:text-gray-300" href="/applicants">
                         Applicants
                     </a>
-                    <a className="text-black hover:text-gray-300" href="/apply">
-                        Apply
-                    </a>
+                    {
+                        userType == 'employer' ? '' : <a className="text-black hover:text-gray-300" href="/apply">
+                      Apply
+                      </a>
+                       }
+                   
                     <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href="/login">
                         Post Jobs
                     </a>
