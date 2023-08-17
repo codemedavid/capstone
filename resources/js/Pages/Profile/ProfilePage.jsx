@@ -6,6 +6,8 @@ import ProfileSection from "@/Components/ProfileSection";
 import ResumeSection from "@/Components/ResumeSection";
 import EducationSection from "@/Components/EducationSection";
 function ProfilePage({ auth }) {
+    const userType = auth.user.user_type
+    localStorage.setItem('userType', userType)
     return (
         <AuthenticatedLayout
             user={auth.user}

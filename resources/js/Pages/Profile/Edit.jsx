@@ -5,6 +5,8 @@ import UpdateProfileInformationForm from './Partials/UpdateProfileInformationFor
 import { Head } from '@inertiajs/react';
 
 export default function Edit({ auth, mustVerifyEmail, status }) {
+    const userType = auth.user.user_type
+    localStorage.setItem('userType', userType)
     return (
         <AuthenticatedLayout
             user={auth.user}
