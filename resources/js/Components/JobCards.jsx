@@ -6,19 +6,19 @@ import JobCard from "./JobCard";
 function JobCards({ jobs }) {
     const [search, setSearch] = useState("");
     console.log(search);
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+
+        const searchValue = e.target.elements["default-search"].value;
+        setSearch(searchValue.toLowerCase());
+    };
 
     return (
         <div className="max-w-[1440px] mx-4 lg:mx-auto grid lg:grid-cols-3 gap-4 pt-8">
             {/* <-- LEFT --> */}
             <div className="flex w-full p-4 bg-gray-100 lg:col-span-2 rounded-xl">
                 <div className="w-full">
-                    <form onChange={(e) => setSearch(e.target.value)}>
-                        <label
-                            htmlFor="default-search"
-                            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                        >
-                            Search
-                        </label>
+                    <form onSubmit={handleSearchSubmit}>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg
