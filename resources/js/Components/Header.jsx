@@ -6,33 +6,52 @@ function Header() {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
-   const userType = localStorage.getItem('userType')
+    const userType = localStorage.getItem("userType");
+
     return (
         <div className="sticky top-0 z-50 bg-slate-50">
-            <div className="container mx-auto flex justify-between items-center py-4 px-2">
-                <div className="text-black text-2xl font-semibold px-4">
+            <div className="container flex items-center justify-between px-2 py-4 mx-auto">
+                <div className="px-4 text-2xl font-semibold text-black">
                     <a href="/">JOB ERA</a>
                 </div>
-                <div className="hidden lg:flex space-x-6 justify-center items-center">
-                {
-                        userType == 'employer' ? '' :  <a className="text-black hover:text-gray-300" href="/joblists">
-                      Jobs
-                      </a>
-                }
-                   
-                    <a className="text-black hover:text-gray-300" href="/applicants">
+                <div className="items-center justify-center hidden space-x-6 lg:flex">
+                    {userType == "employer" ? (
+                        ""
+                    ) : (
+                        <a
+                            className="text-black hover:text-gray-300"
+                            href="/joblists"
+                        >
+                            Jobs
+                        </a>
+                    )}
+
+                    <a
+                        className="text-black hover:text-gray-300"
+                        href="/applicants"
+                    >
                         Applicants
                     </a>
-                    {
-                        userType == 'employer' ? '' : <a className="text-black hover:text-gray-300" href="/apply">
-                      Apply
-                      </a>
-                       }
-                   
-                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href="/login">
+                    {userType == "employer" ? (
+                        ""
+                    ) : (
+                        <a
+                            className="text-black hover:text-gray-300"
+                            href="/apply"
+                        >
+                            Apply
+                        </a>
+                    )}
+
+                    <a
+                        className="px-4 py-2 text-white bg-blue-700 rounded hover:bg-blue-600"
+                        href="/login"
+                    >
                         Post Jobs
                     </a>
-                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded">Find Jobs</a>
+                    <a className="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-400">
+                        Find Jobs
+                    </a>
                 </div>
                 <div className="lg:hidden">
                     <button
@@ -40,7 +59,7 @@ function Header() {
                         className="text-black hover:text-gray-300 focus:outline-none focus:text-gray-300"
                     >
                         <svg
-                            className="h-6 w-6 fill-current"
+                            className="w-6 h-6 fill-current"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                         >
@@ -62,20 +81,28 @@ function Header() {
                 </div>
             </div>
             {menuOpen && (
-                <div className="lg:hidden bg-gray-800 py-2">
+                <div className="py-2 bg-gray-800 lg:hidden">
                     <a className="block px-4 py-2 text-white" href="/joblists">
                         Jobs
                     </a>
-                    <a className="block px-4 py-2 text-white" href="/applicants">
+                    <a
+                        className="block px-4 py-2 text-white"
+                        href="/applicants"
+                    >
                         Applicants
                     </a>
                     <a className="block px-4 py-2 text-white" href="/apply">
                         Apply
                     </a>
-                    <a className="inline mx-2 mt-4 px-4 py-2 text-white bg-blue-700 rounded" href="/login">
+                    <a
+                        className="inline px-4 py-2 mx-2 mt-4 text-white bg-blue-700 rounded"
+                        href="/login"
+                    >
                         Post Jobs
                     </a>
-                    <a className="inline  px-4 py-2 text-white bg-green-500 rounded">Find Jobs</a>
+                    <a className="inline px-4 py-2 text-white bg-green-500 rounded">
+                        Find Jobs
+                    </a>
                 </div>
             )}
         </div>
