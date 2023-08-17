@@ -3,7 +3,7 @@ import Header from '@/Components/Header'
 import "../../../css/app.css"
 
 
-function Apply() {
+function Apply({auth}) {
   const [key, setKey] = useState('home');
   const userType = auth.user.user_type
   localStorage.setItem('userType', userType)
