@@ -5,6 +5,8 @@ import "../../../css/app.css"
 
 function Apply() {
   const [key, setKey] = useState('home');
+  const userType = auth.user.user_type
+  localStorage.setItem('userType', userType)
   return (
 
 
