@@ -37,7 +37,7 @@ Route::get('/hello', function(){
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
 Route::get('/jerome', [JeromePage::class, 'JeromePage'])->name('jobs.page');
 
-Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply')->middleware(['auth', 'verified']);
+Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply')->middleware(['auth', 'verified', 'can:isApplicant']);
 Route::get('/applicants', [ApplicantLists::class, 'ApplicantLists'])->name('post.applicants');
 
 Route::get('/job-overview/{id}', [JobOverview::class, 'JobOverview'])->name('joboverview.page');

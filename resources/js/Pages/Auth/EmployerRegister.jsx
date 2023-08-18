@@ -6,13 +6,13 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 
-export default function Register() {
+export default function EmployerRegister() {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
         password: '',
-        password_confirmation: '',
-        user_type: 'applicant',
+        password_confirmation: '',  
+        user_type: 'employer',
     });
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function Register() {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'));
+        post(route('register.employer'));
     };
 
     return (

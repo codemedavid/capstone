@@ -24,24 +24,19 @@ function JobCard(props) {
                 </CardHeader>
                 <CardBody className="flex flex-col">
                     <Typography
-                        variant="h6"
+                        variant="h5"
                         color="blue"
-                        className="mb-2 uppercase"
+                        className="mb-2 uppercase t "
                     >
                         {props.title}
                     </Typography>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                         {props.employer}
                     </Typography>
-                    <Typography
-                        variant="subtitle1"
-                        color="gray"
-                        className="mb-4"
-                    >
+                    <Typography color="gray" className="mb-4">
                         Job Description
                     </Typography>
                     <Typography
-                        variant="body2"
                         color="gray"
                         className="flex-grow mb-4 overflow-hidden max-h-[100px]"
                     >
@@ -55,10 +50,7 @@ function JobCard(props) {
                             <button>More Info</button>
                             <ArrowLongRightIcon className="w-6 h-6" />
                         </a>
-                        <Typography
-                            variant="body2"
-                            className="text-emerald-500"
-                        >
+                        <Typography className="text-emerald-500">
                             {props.vacancy} Vacancies
                         </Typography>
                     </div>
