@@ -1,8 +1,12 @@
 'use client';
-
+import { Button } from 'flowbite-react';
 import { Tabs } from 'flowbite-react';
 import { Card } from 'flowbite-react';
 import Img from './img/Pacquiao_and_Didal_(cropped).jpg'
+import Ig from "./img/instagram.png";
+import Fb from "./img/fb.png"
+import Web from "./img/website.png";
+import Icon from "./img/icons8-view-48.png";
 
 export default function FullWidthTabs() {
   return (
@@ -21,12 +25,33 @@ export default function FullWidthTabs() {
           <div className="lg:w-[30%] card bg-base-300 rounded-box place-items-center p-4">
             <Card horizontal imgSrc={Img} className='w-[100%] h-[100%]'>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <p>Company Name here</p>
-                <span>Button here</span>
+                <p>Company Name</p>
+                <span>
+                  <Button
+                  gradientDuoTone="cyanToBlue"
+                  outline
+                  className = "w-[80%] mt-2 ml-5 "
+                >
+                  <img className="w-[15%] mr-2" src={Icon}/>
+                  <p>
+                     View Profile
+                  </p>
+                </Button>
+                </span>
               </h5>
               <div className="mt-auto">
-                <p className="font-normal text-gray-700 dark:text-gray-400">Soc med Here</p>
-                <span>Soc med links here</span>
+                <p className="font-normal text-gray-700 dark:text-gray-400 mb-2">Social Medias</p>
+                <div className="flex justify-start">
+                  <a href="https://www.instagram.com/mannypacquiao/" className="link">
+                    <img className="w-[60%]" src={Ig} alt="Button Image" />
+                  </a>
+                  <a href="https://www.facebook.com/MannyPacquiao" className="link">
+                    <img className="w-[60%]" src={Fb} alt="Button Image" />
+                  </a>
+                  <a href="https://en.wikipedia.org/wiki/Manny_Pacquiao" className="link">
+                    <img className="w-[60%]" src={Web} alt="Button Image" />
+                  </a>
+                </div>
               </div>
             </Card>
           </div>
@@ -63,12 +88,33 @@ export default function FullWidthTabs() {
           <div className="lg:w-[30%] card bg-base-300 rounded-box place-items-center p-4">
             <Card horizontal imgSrc={Img} className='w-[100%] h-[100%]'>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <p>Company Name here</p>
-                <span>Button here</span>
+                <p>Company Name</p>
+                <span>
+                  <Button
+                  gradientDuoTone="cyanToBlue"
+                  outline
+                  className = "w-[80%] mt-2 ml-5 "
+                >
+                  <img className="w-[15%] mr-2" src={Icon}/>
+                  <p>
+                     View Profile
+                  </p>
+                </Button>
+                </span>
               </h5>
               <div className="mt-auto">
-                <p className="font-normal text-gray-700 dark:text-gray-400">Soc med Here</p>
-                <span>Soc med links here</span>
+                <p className="font-normal text-gray-700 dark:text-gray-400 mb-2">Social Medias</p>
+                <div className="flex justify-start">
+                  <a href="https://www.instagram.com/mannypacquiao/" className="link">
+                    <img className="w-[60%]" src={Ig} alt="Button Image" />
+                  </a>
+                  <a href="https://www.facebook.com/MannyPacquiao" className="link">
+                    <img className="w-[60%]" src={Fb} alt="Button Image" />
+                  </a>
+                  <a href="https://en.wikipedia.org/wiki/Manny_Pacquiao" className="link">
+                    <img className="w-[60%]" src={Web} alt="Button Image" />
+                  </a>
+                </div>
               </div>
             </Card>
           </div>
@@ -106,12 +152,33 @@ export default function FullWidthTabs() {
           <div className="lg:w-[30%] card bg-base-300 rounded-box place-items-center p-4">
             <Card horizontal imgSrc={Img} className='w-[100%] h-[100%]'>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <p>Company Name here</p>
-                <span>Button here</span>
+                <p>Company Name</p>
+                <span>
+                  <Button
+                  gradientDuoTone="cyanToBlue"
+                  outline
+                  className = "w-[80%] mt-2 ml-5 "
+                >
+                  <img className="w-[15%] mr-2" src={Icon}/>
+                  <p>
+                     View Profile
+                  </p>
+                </Button>
+                </span>
               </h5>
               <div className="mt-auto">
-                <p className="font-normal text-gray-700 dark:text-gray-400">Soc med Here</p>
-                <span>Soc med links here</span>
+                <p className="font-normal text-gray-700 dark:text-gray-400 mb-2">Social Medias</p>
+                <div className="flex justify-start">
+                  <a href="https://www.instagram.com/mannypacquiao/" className="link">
+                    <img className="w-[60%]" src={Ig} alt="Button Image" />
+                  </a>
+                  <a href="https://www.facebook.com/MannyPacquiao" className="link">
+                    <img className="w-[60%]" src={Fb} alt="Button Image" />
+                  </a>
+                  <a href="https://en.wikipedia.org/wiki/Manny_Pacquiao" className="link">
+                    <img className="w-[60%]" src={Web} alt="Button Image" />
+                  </a>
+                </div>
               </div>
             </Card>
           </div>
@@ -145,12 +212,33 @@ export default function FullWidthTabs() {
           <div className="lg:w-[30%] card bg-base-300 rounded-box place-items-center p-4">
             <Card horizontal imgSrc={Img} className='w-[100%] h-[100%]'>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <p>Company Name here</p>
-                <span>Button here</span>
+                <p>Company Name</p>
+                <span>
+                  <Button
+                  gradientDuoTone="cyanToBlue"
+                  outline
+                  className = "w-[80%] mt-2 ml-5 "
+                >
+                  <img className="w-[15%] mr-2" src={Icon}/>
+                  <p>
+                     View Profile
+                  </p>
+                </Button>
+                </span>
               </h5>
               <div className="mt-auto">
-                <p className="font-normal text-gray-700 dark:text-gray-400">Soc med Here</p>
-                <span>Soc med links here</span>
+                <p className="font-normal text-gray-700 dark:text-gray-400 mb-2">Social Medias</p>
+                <div className="flex justify-start">
+                  <a href="https://www.instagram.com/mannypacquiao/" className="link">
+                    <img className="w-[60%]" src={Ig} alt="Button Image" />
+                  </a>
+                  <a href="https://www.facebook.com/MannyPacquiao" className="link">
+                    <img className="w-[60%]" src={Fb} alt="Button Image" />
+                  </a>
+                  <a href="https://en.wikipedia.org/wiki/Manny_Pacquiao" className="link">
+                    <img className="w-[60%]" src={Web} alt="Button Image" />
+                  </a>
+                </div>
               </div>
             </Card>
           </div>
