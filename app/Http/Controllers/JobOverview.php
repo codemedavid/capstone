@@ -13,6 +13,7 @@ class JobOverview extends Controller
     {
         Log::debug($id);
         $jo = Joblisting::where('id',$id)->get();
+        // select * from joblistings where id={id};
         Log::debug($jo);
         return Inertia::render('Posts/JobOverview', [
             'joverview' =>$jo 
