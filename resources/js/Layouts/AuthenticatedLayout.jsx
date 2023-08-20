@@ -8,6 +8,10 @@ import { Link } from '@inertiajs/react';
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
+    const logOut = () => {
+        localStorage.removeItem('userType')
+    }
+
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-white border-b border-gray-100">
@@ -55,8 +59,9 @@ export default function Authenticated({ user, header, children }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
-                                        <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
-                                        <Dropdown.Link href={route('logout')} method="post" as="button">
+                                        <Dropdown.Link href={route('profile.page')}>Profile</Dropdown.Link>
+                                        <Dropdown.Link href={route('profile.edit')}>Settings</Dropdown.Link>
+                                        <Dropdown.Link href={route('logout')} method="post" as="button" onClick={logOut()}>
                                             Log Out
                                         </Dropdown.Link>
                                     </Dropdown.Content>

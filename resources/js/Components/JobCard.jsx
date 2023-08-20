@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Card,
     CardHeader,
     CardBody,
     Typography,
-    Popover,
-    PopoverHandler,
-    PopoverContent,
-    Button,
 } from "@material-tailwind/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 function JobCard(props) {
     return (
         <div>
-            <Card className="flex-row w-full max-w-full mb-4">
+            <Card className="flex-row w-full max-w-full mb-4 shadow-xl h-80 ">
                 <CardHeader
                     shadow={false}
                     floated={false}
@@ -26,40 +22,37 @@ function JobCard(props) {
                         className="object-cover w-full h-full duration-1000 hover:scale-125"
                     />
                 </CardHeader>
-                <CardBody>
+                <CardBody className="flex flex-col">
                     <Typography
-                        variant="h6"
+                        variant="h5"
                         color="blue"
-                        className="mb-4 uppercase"
+                        className="mb-2 uppercase t "
                     >
                         {props.title}
                     </Typography>
-                    <Typography variant="h4" color="blue-gray" className="mb-2">
-                        {props.company}
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                        {props.employer}
                     </Typography>
-                    <Typography className="text-xl">Job Description</Typography>
-                    <Typography color="gray" className="mb-8 font-normal">
-                        Like so many organizations these days, Autodesk is a
-                        company in transition. It was until recently a
-                        traditional boxed software company selling licenses. Yet
-                        its own business model disruption is only part of the
-                        story
+                    <Typography color="gray" className="mb-4">
+                        Job Description
                     </Typography>
-                    <div className="flex justify-between w-full">
-                        <div>
-                            <a
-                                href="/job-overview"
-                                className="flex text-blue-600 duration-500 hover:scale-125 "
-                            >
-                                <button>More Info</button>
-                                <ArrowLongRightIcon className="w-6 h-6 " />
-                            </a>
-                        </div>
-                        <div>
-                            <h2 className="text-emerald-500">
-                                {props.vacancy} Vacancies
-                            </h2>
-                        </div>
+                    <Typography
+                        color="gray"
+                        className="flex-grow mb-4 overflow-hidden max-h-[100px]"
+                    >
+                        {props.jdescription}
+                    </Typography>
+                    <div className="flex justify-between">
+                        <a
+                            href={`/job-overview/${props.id}`}
+                            className="flex text-blue-600 duration-500 hover:scale-125"
+                        >
+                            <button>More Info</button>
+                            <ArrowLongRightIcon className="w-6 h-6" />
+                        </a>
+                        <Typography className="text-emerald-500">
+                            {props.vacancy} Vacancies
+                        </Typography>
                     </div>
                 </CardBody>
             </Card>

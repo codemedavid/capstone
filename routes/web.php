@@ -2,13 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\JobListing;
+use App\Http\Controllers\JobListingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Apply;
 use App\Http\Controllers\ApplicantLists;
 use App\Http\Controllers\NewPage;
+use App\Http\Controllers\AdminDashboard;
 use App\Http\Controllers\JeromePage;
 use App\Http\Controllers\JobOverview;
 /*
@@ -30,22 +31,41 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/hello', function(){
+    return 'Hello World';
+});
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
 Route::get('/jerome', [JeromePage::class, 'JeromePage'])->name('jobs.page');
-Route::get('/job-overview', [JobOverview::class, 'JobOverview'])->name('joboverview.page');
-Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply')->middleware(['auth', 'verified']);
+
+Route::get('/apply', [Apply::class, 'Apply'])->name('post.apply')->middleware(['auth', 'verified', 'can:isApplicant']);
 Route::get('/applicants', [ApplicantLists::class, 'ApplicantLists'])->name('post.applicants');
-Route::get('/jobs', [JobListing::class, 'joblists'])->name('post.listings');
+
+Route::get('/job-overview/{id}', [JobOverview::class, 'JobOverview'])->name('joboverview.page');
+Route::get('/joblists', [JobListingController::class, 'joblists'])->name('joblists');
+Route::get('/joblists/create', [JobListingController::class, 'create'])->name('joblists.create');
+Route::post('/joblists', [JobListingController::class, 'store'])->name('joblists.store');
+Route::get('/admin/dashboard', [AdminDashboard::class, 'Admin'])->name('admin.dashboard');
+
+Route::get('/employer/profile', function(){
+    return Inertia::render('Employer/EmployerProfile');
+})->name('employer.profile');
+
 Route::get('/', [PostController::class, 'index'])->name('post.index');
 Route::get('/posts/new', [PostController::class, 'new'])->name('post.new');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/profile', function () {
+    return Inertia::render('Profile/ProfilePage');
+})->middleware(['auth', 'verified'])->name('profile.page');
+
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/settings', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/settings', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/settings', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';
