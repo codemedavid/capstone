@@ -29,10 +29,10 @@ function Header() {
                       </a>
                        }
                    
-                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href="/login">
-                        Post Jobs
+                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href={route('register')}>
+                    Sign up as Applicant
                     </a>
-                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded">Find Jobs</a>
+                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded" href={route('register.employer')}>Sign up as Employer</a>
                 </div>
                 <div className="lg:hidden">
                     <button
@@ -72,10 +72,10 @@ function Header() {
                     <a className="block px-4 py-2 text-white" href="/apply">
                         Apply
                     </a>
-                    <a className="inline mx-2 mt-4 px-4 py-2 text-white bg-blue-700 rounded" href="/login">
-                        Post Jobs
+                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href={route('register')}>
+                    Sign up as Applicant
                     </a>
-                    <a className="inline  px-4 py-2 text-white bg-green-500 rounded">Find Jobs</a>
+                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded" href={route('register.employer')}>Sign up as Employer</a>
                 </div>
             )}
         </div>
