@@ -22,3 +22,25 @@ function ApplicantList({auth}) {
 }
 
 export default ApplicantList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+

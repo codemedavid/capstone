@@ -1,26 +1,42 @@
-import React, {useState} from 'react'
-import Header from '@/Components/Header'
-import "../../../css/app.css"
+
+import React from 'react';
+import Header from '@/Components/Header';
+import "../../../css/app.css";
+import Tabs from '../../Components/Tabs';
 import Authenticated from '@/Layouts/AuthenticatedLayout';
+
+
 
 function Apply({auth}) {
   const [key, setKey] = useState('home');
   const userType = auth.user.user_type
   localStorage.setItem('userType', userType)
   return (
-
-
     <>
-    <Authenticated 
+     <Authenticated 
      user={auth.user}
     > 
+      <div
+        className="text-center border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+        style={{ backgroundColor: "#004AAD" }}
+      >
+        <p className='text-white text-9xl pt-10'>Job Title</p>
+        <button
+          type="button"
+          className="py-2.5 px-5 mb-2 text-sm font-medium text-white focus:outline-none rounded-lg border border-gray-200 hover:bg-yellow-400 hover:text-white focus:z-10 focus:ring-4 dark:hover:text-black mt-5"
+        >
+          <p className='text-white text-3xl'>Apply Now</p>
+        </button>
+
+   
       <div className=" text-center border border-gray-200  shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" style={{ backgroundColor: "#004AAD" }}>
         <p className='text-white text-9xl pt-10' >Job Title</p>
         <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none rounded-lg border border-gray-200 hover:bg-yellow-400 hover:text-white focus:z-10 focus:ring-4  dark:hover:text-black mt-5"><p className='text-white text-3xl'>Apply Now</p></button>
+
         <div className="text-left">
           <div className='row'>
             <div className="col">
-              <p class="py-2.5 px-5 mr-2 text-sm font-medium inline-flex items-center text-white ">
+            <p class="py-2.5 px-5 mr-2 text-sm font-medium inline-flex items-center text-white ">
                 <svg style={{ color: "#FF3131" }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
@@ -42,6 +58,9 @@ function Apply({auth}) {
           </div>
         </div>
       </div>
+
+   
+      <Tabs/>
       <div class="sm:hidden">
     <label for="tabs" class="sr-only">Select your country</label>
     <select id="tabs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -68,9 +87,7 @@ function Apply({auth}) {
 
 </Authenticated>
     </>
-
-
-  )
+  );
 }
 
-export default Apply
+export default Apply;
