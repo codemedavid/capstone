@@ -1,17 +1,19 @@
 import React, {useState} from 'react'
 import Header from '@/Components/Header'
 import "../../../css/app.css"
+import Authenticated from '@/Layouts/AuthenticatedLayout';
 
-
-function Apply() {
+function Apply({auth}) {
   const [key, setKey] = useState('home');
+  const userType = auth.user.user_type
+  localStorage.setItem('userType', userType)
   return (
 
 
     <>
-      <div className='pb-20'>
-        <Header />
-      </div>
+    <Authenticated 
+     user={auth.user}
+    > 
       <div className=" text-center border border-gray-200  shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" style={{ backgroundColor: "#004AAD" }}>
         <p className='text-white text-9xl pt-10' >Job Title</p>
         <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none rounded-lg border border-gray-200 hover:bg-yellow-400 hover:text-white focus:z-10 focus:ring-4  dark:hover:text-black mt-5"><p className='text-white text-3xl'>Apply Now</p></button>
@@ -64,7 +66,7 @@ function Apply() {
     </li>
 </ul>
 
-
+</Authenticated>
     </>
 
 

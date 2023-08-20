@@ -9,6 +9,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\Apply;
 use App\Http\Controllers\ApplicantLists;
 use App\Http\Controllers\NewPage;
+use App\Http\Controllers\AdminDashboard;
 use App\Http\Controllers\JeromePage;
 use App\Http\Controllers\JobOverview;
 /*
@@ -44,7 +45,11 @@ Route::get('/job-overview/{id}', [JobOverview::class, 'JobOverview'])->name('job
 Route::get('/joblists', [JobListingController::class, 'joblists'])->name('joblists');
 Route::get('/joblists/create', [JobListingController::class, 'create'])->name('joblists.create');
 Route::post('/joblists', [JobListingController::class, 'store'])->name('joblists.store');
+Route::get('/admin/dashboard', [AdminDashboard::class, 'Admin'])->name('admin.dashboard');
 
+Route::get('/employer/profile', function(){
+    return Inertia::render('Employer/EmployerProfile');
+})->name('employer.profile');
 
 Route::get('/', [PostController::class, 'index'])->name('post.index');
 Route::get('/posts/new', [PostController::class, 'new'])->name('post.new');
@@ -61,5 +66,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/settings', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/settings', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';
