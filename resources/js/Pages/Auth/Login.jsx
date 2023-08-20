@@ -30,7 +30,13 @@ export default function Login({ status, canResetPassword }) {
 
     return (
         <>
-            <Header/>
+            <Header
+            button1={'Sign up as Applicant'}
+            button2={'Sign up as Employer'}
+            link1={'register'}
+            link2={'register.employer'}
+
+            />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
             <div className="container w-[100%] flex justify-center items-center h-[80vh]">

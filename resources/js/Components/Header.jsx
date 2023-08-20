@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-function Header() {
+function Header(props) {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const link1 = props.link1
+    const link2 = props.link2
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
@@ -38,10 +39,10 @@ function Header() {
                       </a>
                        }
                    
-                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href={route('register')}>
-                    Sign up as Applicant
+                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href={route(`${link1}`)}>
+                    {props.button1}
                     </a>
-                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded" href={route('register.employer')}>Sign up as Employer</a>
+                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded" href={route(`${link2}`)}> {props.button2}</a>
                 </div>
                 <div className="lg:hidden">
                     <button

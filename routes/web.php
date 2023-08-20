@@ -47,6 +47,10 @@ Route::get('/joblists/create', [JobListingController::class, 'create'])->name('j
 Route::post('/joblists', [JobListingController::class, 'store'])->name('joblists.store');
 Route::get('/admin/dashboard', [AdminDashboard::class, 'Admin'])->name('admin.dashboard');
 
+Route::get('/employer/profile', function(){
+    return Inertia::render('Employer/EmployerProfile');
+})->name('employer.profile');
+
 Route::get('/', [PostController::class, 'index'])->name('post.index');
 Route::get('/posts/new', [PostController::class, 'new'])->name('post.new');
 Route::get('/dashboard', function () {
