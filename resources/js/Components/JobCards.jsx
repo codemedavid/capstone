@@ -5,7 +5,15 @@ import JobCard from "./JobCard";
 
 function JobCards({ jobs }) {
     const [search, setSearch] = useState("");
+    const [filters, setFilters] = useState({
+        fullTime: false,
+        partTime: false,
+        hybrid: false,
+        workFromHome: false,
+    });
+
     console.log(search);
+
     const handleSearchSubmit = (e) => {
         e.preventDefault();
 
@@ -13,9 +21,29 @@ function JobCards({ jobs }) {
         setSearch(searchValue.toLowerCase());
     };
 
+    const handleCheckboxChange = (filterName) => {
+        setFilters((prevFilters) => ({
+            ...prevFilters,
+            [filterName]: !prevFilters[filterName],
+        }));
+    };
+
+    const filteredJobs = jobs.filter((item) => {
+        const lowerSearch = search.toLowerCase();
+        return (
+            (lowerSearch === "" ||
+                item.jtitle.toLowerCase().includes(lowerSearch) ||
+                item.employer.toLowerCase().includes(lowerSearch)) &&
+            (!filters.fullTime || item.worksched === "Full-Time") &&
+            (!filters.partTime || item.worksched === "Part-Time") &&
+            (!filters.hybrid || item.typeofwork === "Hybrid") &&
+            (!filters.workFromHome || item.typeofwork === "Work from Home")
+        );
+    });
+    console.log("Filtered Jobs:", filteredJobs);
     return (
         <div className="max-w-[1440px] mx-4 lg:mx-auto grid lg:grid-cols-3 gap-4 pt-8">
-            {/* <-- LEFT --> */}
+            {/* LEFT */}
             <div className="flex w-full p-4 bg-gray-100 lg:col-span-2 rounded-xl">
                 <div className="w-full">
                     <form onSubmit={handleSearchSubmit}>
@@ -53,73 +81,59 @@ function JobCards({ jobs }) {
                         </div>
                     </form>
                     <div className="flex-col mt-8">
-                        {jobs
-                            .filter((items) => {
-                                return (
-                                    search.toLowerCase() === "" ||
-                                    items.jtitle
-                                        .toLowerCase()
-                                        .includes(search) ||
-                                    items.employer
-                                        .toLowerCase()
-                                        .includes(search) ||
-                                    items.typeofwork
-                                        .toLowerCase()
-                                        .includes(search)
-                                );
-                            })
-                            .map((job) => (
-                                <JobCard
-                                    key={job.id}
-                                    id={job.id}
-                                    title={job.jtitle}
-                                    jdescription={job.jdescription}
-                                    employer={job.employer}
-                                    salary={job.salary}
-                                    vacancy={job.vacancy}
-                                />
-                            ))}
+                        {filteredJobs.map((job) => (
+                            <JobCard
+                                key={job.id}
+                                id={job.id}
+                                title={job.jtitle}
+                                jdescription={job.jdescription}
+                                employer={job.employer}
+                                salary={job.salary}
+                                vacancy={job.vacancy}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
-            {/* <-- RIGHT --> */}
-            <div className="flex col-span-1 gap-4 bg-gray-100 rounded-xl max-h-[560px] justify-center">
-                <div className="w-full p-4 border rounded-xl">
+            {/* RIGHT */}
+            <div className="flex col-span-1 gap-4 bg-gray-100 rounded-xl max-h-[290px] justify-center">
+                <div className="w-full p-4">
                     <div className="">
                         <h2>Filter By:</h2>
                     </div>
                     <div className="flex items-center gap-2 my-4">
-                        <Checkbox color="green" />
+                        <Checkbox
+                            color="green"
+                            checked={filters.fullTime}
+                            onChange={() => handleCheckboxChange("fullTime")}
+                        />
                         <h1 className="text-center">Full-Time</h1>
                     </div>
-                    <div className="flex items-center gap-2 pb-4 border-b-4 border-emerald-400">
-                        <Checkbox color="green" /> <h1>Part-Time</h1>
+                    <div className="flex items-center gap-2 pb-4 ">
+                        <Checkbox
+                            color="green"
+                            checked={filters.partTime}
+                            onChange={() => handleCheckboxChange("partTime")}
+                        />
+                        <h1>Part-Time</h1>
                     </div>
-                    <div className="mt-4">
-                        <h2>Category:</h2>
+                    <div className="flex items-center gap-2 pb-4 ">
+                        <Checkbox
+                            color="green"
+                            checked={filters.hybrid}
+                            onChange={() => handleCheckboxChange("hybrid")}
+                        />
+                        <h1>Hybrid</h1>
                     </div>
-                    <div className="flex items-center gap-1 ">
-                        <Checkbox color="green" /> <h1>Admin Support</h1>
-                    </div>
-                    <div className="flex items-center gap-1 ">
-                        <Checkbox color="green" /> <h1>Customer Service</h1>
-                    </div>
-                    <div className="flex items-center gap-1 ">
-                        <Checkbox color="green" /> <h1>Admin Support</h1>
-                    </div>
-                    <div className="flex items-center gap-1 ">
-                        <Checkbox color="green" /> <h1>Customer Service</h1>
-                    </div>
-                    <div className="flex items-center gap-1 ">
-                        <Checkbox color="green" /> <h1>Design & Creative</h1>
-                    </div>
-                    <div className="flex items-center gap-1 ">
-                        <Checkbox color="green" />
-                        <h1>Engineering & Architecture</h1>
-                    </div>
-                    <div className="flex items-center gap-21">
-                        <Checkbox color="green" />
-                        <h1>Web, Mobile & Software Dev</h1>
+                    <div className="flex items-center gap-2 pb-4 ">
+                        <Checkbox
+                            color="green"
+                            checked={filters.workFromHome}
+                            onChange={() =>
+                                handleCheckboxChange("workFromHome")
+                            }
+                        />
+                        <h1>Work From Home</h1>
                     </div>
                 </div>
             </div>
