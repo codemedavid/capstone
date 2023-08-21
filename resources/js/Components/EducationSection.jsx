@@ -18,19 +18,10 @@ function EducationSection() {
                         <div className="container ">
                             <div className="flex flex-col md:flex-row">
                                 <div className="border-solid flex-1 basis-4/12 border-r-2 border-t-2">
-                                    <div className="mr-3 mt-3 mb-5">
-                                        <label
-                                            class="block ml-5 mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                            for="multiple_files"
-                                        >
-                                            Upload multiple files
-                                        </label>
-                                        <input
-                                            class="ml-4 block w-100 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                            id="multiple_files"
-                                            type="file"
-                                            multiple
-                                        />
+                                    <div className="flex items-center justify-between mt-3 mb-5">
+                                    <img class="w-20 h-20 rounded-full ml-10 mt-2 mb-2" src="https://1000logos.net/wp-content/uploads/2017/02/Harvard-Logo-Meaning-history.jpg" alt="Large avatar"/>
+                                    <b className='text-2xl  text-blue-900'>Harvard School of Developers</b>
+                                    <b className='text-2xl mr-10  text-blue-900'>2023-2024</b>
                                     </div>
                                 </div>
                             </div>
