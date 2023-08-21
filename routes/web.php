@@ -52,9 +52,14 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::resource('userProfile', ProfilePage::class)
+        ->middleware(['auth', 'verified']);
+
 Route::get('/profile', function () {
     return Inertia::render('Profile/ProfilePage');
 })->middleware(['auth', 'verified'])->name('profile.page');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/settings', [ProfileController::class, 'edit'])->name('profile.edit');
