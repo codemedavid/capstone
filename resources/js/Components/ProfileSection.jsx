@@ -65,6 +65,10 @@ function ProfileSection() {
                                         <b>Male</b>
                                     </div>
                                     <div className="border-t-2 mt-2" />
+                                    <div className="flex ml-24 py-2">
+                                        <b>Skills</b>
+                                    </div>
+                                    <div className="border-t-2 mt-2" />
                                     <div className="flex justify-around ml-auto mt-5 py-2">
                                         <b>Jobs Applied</b>
                                         <b>Jobs Saved</b>
