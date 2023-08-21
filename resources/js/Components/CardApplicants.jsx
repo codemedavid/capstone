@@ -24,11 +24,11 @@ function CardApplicants() {
                     <p >Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.Click the button to listen on Spotiwhy app.</p>
                     <p >Click the button to listen on Spotiwhy app.</p>
                     <h3 className="card-title mb-3">Skills</h3>
-                   
+                    <div className="row mt-0">
                     <span className="hover:bg-orange-500 hover:text-white bg-orange-400 border-spacing-x-28 px-1 py-1 rounded-lg mr-1 text-sm">JavaScript</span> 
                     <span className="hover:bg-blue-500 hover:text-white bg-blue-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm mr-1">React</span> 
                     <span className="hover:bg-green-500 hover:text-white bg-green-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm">PHP</span> 
-                    
+                    </div>
 
                     <div className="row card-actions justify-end mb-3">
                         <HeartIcon className="w-7 mr-2 hover:text-red-900 hover:fill-red-600"/><button className="btn-sm rounded-lg ring-2 ring-sky-700 hover:bg-sky-500 hover:text-white"> <EyeIcon className="w-5 inline mr-1"/>View Profile</button>
