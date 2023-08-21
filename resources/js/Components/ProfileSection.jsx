@@ -54,7 +54,7 @@ function ProfileSection() {
                                         </button>
                                     </div>
                                     <div className="border-t-2 mt-2" />
-                                    <div className="flex justify-around py-2">
+                                    <div className="flex justify-around mt-2 py-2">
                                         <b>Phone Number</b>
                                         <b>Lives in</b>
                                         <b>Gender</b>
@@ -65,7 +65,7 @@ function ProfileSection() {
                                         <b>Male</b>
                                     </div>
                                     <div className="border-t-2 mt-2" />
-                                    <div className="flex ml-24 py-2">
+                                    <div className="flex ml-24 mt-2 py-2">
                                         <b>Skills</b>
                                     </div>
                                     <div className="flex ml-24 py-2">
@@ -74,10 +74,15 @@ function ProfileSection() {
                                     <span className="hover:bg-green-500 hover:text-white bg-green-400 border-spacing-x-28 px-1 py-1 rounded-lg text-sm">PHP</span> 
                                     </div>
                                     <div className="border-t-2 mt-2" />
-                                    <div className="flex justify-around ml-auto mt-5 py-2">
+                                    <div className="flex justify-around ml-auto mt-2 py-2">
                                         <b>Jobs Applied</b>
                                         <b>Jobs Saved</b>
                                         <b>Profile Views</b>
+                                    </div>
+                                    <div className="flex justify-around ml-auto mb-5  text-blue-500">
+                                        <b>#jobs applied</b>
+                                        <b>#jobs saved</b>
+                                        <b>#profile views</b>
                                     </div>
                                 </div>
                             </div>
