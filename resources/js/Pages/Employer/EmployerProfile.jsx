@@ -1,14 +1,21 @@
-import React from 'react'
-import Authenticated from '@/Layouts/AuthenticatedLayout'
-function EmployerProfile({auth}) {
-  return (
-    <div>
-      <Authenticated
-       user={auth.user}>
-       
-      </Authenticated>
-    </div>
-  )
+import React from "react";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { Head } from "@inertiajs/react";
+import PrimaryButton from "@/Components/PrimaryButton";
+import EmployerCard from "@/Pages/Employer/EmployerCard/EmployerCard";
+import EmployerInfo from "@/Pages/Employer/EmployerInfo/EmployerInfo";
+function EmployerProfile({ auth }) {
+    return (
+        <div>
+            <AuthenticatedLayout user={auth.user}>
+                <Head title="EmployerProfile" />
+                <div>
+                    <EmployerCard />
+                    {/* <EmployerInfo /> */}
+                </div>
+            </AuthenticatedLayout>
+        </div>
+    );
 }
 
-export default EmployerProfile
+export default EmployerProfile;

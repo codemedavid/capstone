@@ -31,7 +31,6 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
 Route::get('/hello', function(){
     return 'Hello World';
 });
