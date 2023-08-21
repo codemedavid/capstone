@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\test;
 use Illuminate\Http\Request;
 
-class ProfilePage extends Controller
-
+class TestController extends Controller
 {
-    public function ProfilePage(){
-        return Inertia::render('Profile/ProfilePage');
-    }
-
-     /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
