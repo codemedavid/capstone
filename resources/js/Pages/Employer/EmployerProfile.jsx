@@ -3,7 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import PrimaryButton from "@/Components/PrimaryButton";
 import EmployerCard from "@/Pages/Employer/EmployerCard/EmployerCard";
-import EmployerInfo from "@/Pages/Employer/EmployerInfo/EmployerInfo";
+
 function EmployerProfile({ auth }) {
     return (
         <div>
