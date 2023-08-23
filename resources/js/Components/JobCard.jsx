@@ -5,7 +5,7 @@ import {
     CardBody,
     Typography,
 } from "@material-tailwind/react";
-import {ArrowLongRightIcon} from "@heroicons/react/outline";
+
 
 function JobCard(props) {
     return (
@@ -48,7 +48,10 @@ function JobCard(props) {
                             className="flex text-blue-600 duration-500 hover:scale-125"
                         >
                             <button>More Info</button>
-                            <ArrowLongRightIcon className="w-6 h-6" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+</svg>
+
                         </a>
                         <Typography className="text-emerald-500">
                             {props.vacancy} Vacancies

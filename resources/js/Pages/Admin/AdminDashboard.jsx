@@ -1,9 +1,10 @@
 import React from 'react'
-
+import AdminSidebar from '@/Components/AdminComponents/AdminSidebar'
 function AdminDashboard() {
   return (
-    <div>
-      
+    <div className='flex justify-between'>
+      <AdminSidebar></AdminSidebar>
+      <div className='w-[86%]'>new</div>
     </div>
   )
 }
