@@ -67,8 +67,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/settings', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::resource('createJob', CreateJobController::class)
             ->only('index', 'store')
             ->middleware(['auth', 'verified']);
+
 
 require __DIR__.'/auth.php';
