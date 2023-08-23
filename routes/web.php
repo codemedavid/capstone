@@ -32,7 +32,7 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-Route::get('/hello', function(){
+Route::get('/hello', function () {
     return 'Hello World';
 });
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
@@ -47,7 +47,7 @@ Route::get('/joblists/create', [JobListingController::class, 'create'])->name('j
 Route::post('/joblists', [JobListingController::class, 'store'])->name('joblists.store');
 Route::get('/admin/dashboard', [AdminDashboard::class, 'Admin'])->name('admin.dashboard');
 
-Route::get('/employer/profile', function(){
+Route::get('/employer/profile', function () {
     return Inertia::render('Employer/EmployerProfile');
 })->name('employer.profile');
 
@@ -57,9 +57,14 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::resource('userProfile', ProfilePage::class)
+    ->middleware(['auth', 'verified']);
+
 Route::get('/profile', function () {
     return Inertia::render('Profile/ProfilePage');
-})->middleware(['auth', 'verified'])->name('profile.page');
+})->middleware(['auth', 'verified', 'can:isApplicant'])->name('profile.page');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/settings', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -69,8 +74,8 @@ Route::middleware('auth')->group(function () {
 
 
 Route::resource('createJob', CreateJobController::class)
-            ->only('index', 'store')
-            ->middleware(['auth', 'verified']);
+    ->only('index', 'store')
+    ->middleware(['auth', 'verified']);
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
