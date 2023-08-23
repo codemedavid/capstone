@@ -5,7 +5,7 @@ import {
     CardBody,
     Typography,
 } from "@material-tailwind/react";
-import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
+import {ArrowLongRightIcon} from "@heroicons/react/outline";
 
 function JobCard(props) {
     return (
