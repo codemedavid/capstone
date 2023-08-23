@@ -31,7 +31,7 @@ Route::get('/welcome', function () {
     ]);
 });
 
-Route::get('/hello', function(){
+Route::get('/hello', function () {
     return 'Hello World';
 });
 Route::get('/royce', [NewPage::class, 'Page'])->name('post.page');
@@ -53,11 +53,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('userProfile', ProfilePage::class)
-        ->middleware(['auth', 'verified']);
+    ->middleware(['auth', 'verified']);
 
 Route::get('/profile', function () {
     return Inertia::render('Profile/ProfilePage');
-})->middleware(['auth', 'verified'])->name('profile.page');
+})->middleware(['auth', 'verified', 'can:isApplicant'])->name('profile.page');
 
 
 
@@ -71,4 +71,4 @@ Route::middleware('auth')->group(function () {
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

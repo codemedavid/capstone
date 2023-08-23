@@ -1,6 +1,7 @@
 import React from 'react'
-import { PencilIcon } from "@heroicons/react/24/outline";
-import { Head } from "@inertiajs/react";
+import { ProfileEditButton } from './ProfileEditButton';
+import { AboutEditButton } from './AboutEditButton';
+
 function ProfileSection() {
   return (
     <div>
@@ -15,13 +16,7 @@ function ProfileSection() {
                             <div className="flex flex-col md:flex-row">
                                 <div className="border-solid flex-1 basis-4/12 border-r-2 border-t-2">
                                     <div className="flex justify-end mr-3 mt-3">
-                                        <button
-                                            type="button"
-                                            class="btn-sm px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                        >
-                                            <PencilIcon className="w-4 inline mr-2" />
-                                            Edit
-                                        </button>
+                                        <ProfileEditButton/>
                                     </div>
 
                                     <div className="flex justify-center">
@@ -45,13 +40,7 @@ function ProfileSection() {
                                         <h1 className="card-title ml-3 mt-3">
                                             About
                                         </h1>
-                                        <button
-                                            type="button"
-                                            class="btn-sm px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-3 mt-3"
-                                        >
-                                            <PencilIcon className="w-4 inline mr-2" />
-                                            Edit
-                                        </button>
+                                        <AboutEditButton/>
                                     </div>
                                     <div className="border-t-2 mt-2" />
                                     <div className="flex justify-around mt-2 py-2">
