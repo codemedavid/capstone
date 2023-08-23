@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -60,4 +61,9 @@ class User extends Authenticatable
     }
 
     // Add more relationships based on your requirements
+
+    public function createJob(): HasMany
+    {
+        return $this->hasMany(CreateJob::class);
+    }
 }
