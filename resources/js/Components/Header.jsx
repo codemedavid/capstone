@@ -33,16 +33,26 @@ function Header(props) {
                     >
                         Applicants
                     </a>
-                    {
-                        userType == 'employer' ? '' : <a className="text-black hover:text-gray-300" href="/apply">
-                      Apply
-                      </a>
-                       }
-                   
-                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href={route(`${link1}`)}>
-                    {props.button1}
+                    {userType == "employer" ? (
+                        ""
+                    ) : (
+                        <a
+                            className="text-black hover:text-gray-300"
+                            href="/apply"
+                        >
+                            Apply
+                        </a>
+                    )}
+
+                    <a
+                        className="px-4 py-2 text-white bg-blue-700 rounded hover:bg-blue-600"
+                        href="/login"
+                    >
+                        Post Jobs
                     </a>
-                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded" href={route(`${link2}`)}> {props.button2}</a>
+                    <a className="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-400">
+                        Find Jobs
+                    </a>
                 </div>
                 <div className="lg:hidden">
                     <button
@@ -85,10 +95,15 @@ function Header(props) {
                     <a className="block px-4 py-2 text-white" href="/apply">
                         Apply
                     </a>
-                    <a className="text-white bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded" href={route('register')}>
-                    Sign up as Applicant
+                    <a
+                        className="inline px-4 py-2 mx-2 mt-4 text-white bg-blue-700 rounded"
+                        href="/login"
+                    >
+                        Post Jobs
                     </a>
-                    <a className="text-white bg-green-500 hover:bg-green-400 px-4 py-2 rounded" href={route('register.employer')}>Sign up as Employer</a>
+                    <a className="inline px-4 py-2 text-white bg-green-500 rounded">
+                        Find Jobs
+                    </a>
                 </div>
             )}
         </div>
