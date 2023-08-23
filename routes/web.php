@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateJobController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\JobListingController;
@@ -31,7 +32,6 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
 Route::get('/hello', function(){
     return 'Hello World';
 });
@@ -67,6 +67,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/settings', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::resource('createJob', CreateJobController::class)
+            ->only('index', 'store')
+            ->middleware(['auth', 'verified']);
 
 
 require __DIR__.'/auth.php';
