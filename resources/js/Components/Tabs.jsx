@@ -13,16 +13,17 @@ export default function FullWidthTabs() {
     <Tabs.Group
       aria-label="Full width tabs"
       style="fullWidth"
+      className=' bg-base-300'
     >
       <Tabs.Item
         active
         title="Profile"
       >
-        <div className="flex flex-col lg:flex-row w-full">
+        <div className="flex flex-col lg:flex-row w-full  bg-base-300">
           <div className="lg:w-[70%] card bg-base-300 rounded-box p-4">
             content
           </div>
-          <div className="lg:w-[30%] card bg-base-300 rounded-box place-items-center p-4">
+          <div className="lg:w-[32%] card bg-base-300 rounded-box place-items-center p-4">
             <Card horizontal imgSrc={Img} className='w-[100%] h-[100%]'>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 <p>Company Name</p>
@@ -80,6 +81,7 @@ export default function FullWidthTabs() {
       <Tabs.Item
         active
         title="Profile"
+        
       >
         <div className="flex flex-col lg:flex-row w-full">
           <div className="lg:w-[70%] card bg-base-300 rounded-box p-4">
