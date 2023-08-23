@@ -10,23 +10,16 @@ function ApplicantList({ auth }) {
 
     const user = auth.user;
     return (
-        <div>
-            {user == null ? (
-                <>
-                    <Header
-                        button1={"Sign up as Applicant"}
-                        button2={"Sign up as Employer"}
-                        link1={"register"}
-                        link2={"register.employer"}
-                    />
-                    <ApplicantDashboard />
-                </>
-            ) : (
-                <Authenticated user={user}>
-                    {" "}
-                    <ApplicantDashboard />
-                </Authenticated>
-            )}
+
+        <div>  
+        {
+            user == null ? <><Header   button1={'Sign up as Applicant'}
+            button2={'Sign up as Employer'}
+            link1={'register'}
+            link2={'register.employer'}/><ApplicantDashboard/></> : <Authenticated user={user}> <ApplicantDashboard/></Authenticated>
+        }          
+            
+            
 
             <Footer></Footer>
         </div>

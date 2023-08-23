@@ -44,7 +44,7 @@ function JobCard(props) {
                     </Typography>
                     <div className="flex justify-between">
                         <a
-                            href={`/job-overview/${props.id}`}
+                            href={`/apply/${props.id}`}
                             className="flex text-blue-600 duration-500 hover:scale-125"
                         >
                             <button>More Info</button>

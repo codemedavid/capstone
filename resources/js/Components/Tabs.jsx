@@ -8,7 +8,7 @@ import Fb from "./img/fb.png"
 import Web from "./img/website.png";
 import Icon from "./img/icons8-view-48.png";
 
-export default function FullWidthTabs() {
+export default function FullWidthTabs(description) {
   return (
     <Tabs.Group
       aria-label="Full width tabs"
@@ -21,7 +21,7 @@ export default function FullWidthTabs() {
       >
         <div className="flex flex-col lg:flex-row w-full  bg-base-300">
           <div className="lg:w-[70%] card bg-base-300 rounded-box p-4">
-            content
+            {description.description}
           </div>
           <div className="lg:w-[32%] card bg-base-300 rounded-box place-items-center p-4">
             <Card horizontal imgSrc={Img} className='w-[100%] h-[100%]'>
@@ -80,7 +80,7 @@ export default function FullWidthTabs() {
 
       <Tabs.Item
         active
-        title="Profile"
+        title="Requirments"
         
       >
         <div className="flex flex-col lg:flex-row w-full">
