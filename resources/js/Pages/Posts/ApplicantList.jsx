@@ -11,7 +11,10 @@ function ApplicantList({auth}) {
     return (
         <div>  
         {
-            user == null ? <><Header /><ApplicantDashboard/></> : <Authenticated user={user}> <ApplicantDashboard/></Authenticated>
+            user == null ? <><Header   button1={'Sign up as Applicant'}
+            button2={'Sign up as Employer'}
+            link1={'register'}
+            link2={'register.employer'}/><ApplicantDashboard/></> : <Authenticated user={user}> <ApplicantDashboard/></Authenticated>
         }          
             
             
