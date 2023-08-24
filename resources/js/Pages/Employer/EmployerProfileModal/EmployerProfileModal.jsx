@@ -6,6 +6,7 @@ const EmployerProfileModal = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
     return (
         <div>
             <button
@@ -23,11 +24,11 @@ const EmployerProfileModal = () => {
                 data-modal-backdrop="static"
                 tabindex="-1"
                 aria-hidden="true"
-                className={`fixed top-0 left-0 items-center right-0 z-50 ${
+                className={`fixed top-0 left-0 right-0 z-50 ${
                     show ? "block" : "hidden"
-                } w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+                } p-4 mb-5 flex justify-center items-center min-h-screen bg-slate-900/50 `}
             >
-                <div className="relative w-full max-w-2xl max-h-full">
+                <div className="relative w-full max-w-2xl max-h-full ">
                     <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                         <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -57,7 +58,10 @@ const EmployerProfileModal = () => {
                                 <span className="sr-only">Close modal</span>
                             </button>
                         </div>
-                        <CreateJob />
+                        <div className="p-10 max-h-[70vh] overflow-auto">
+                            <CreateJob />
+                        </div>
+
                         <div className="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                             <button
                                 data-modal-hide="staticModal"

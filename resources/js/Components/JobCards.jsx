@@ -12,6 +12,12 @@ function JobCards({ jobs }) {
         workFromHome: false,
     });
 
+<<<<<<< HEAD
+=======
+    console.log(jobs);
+    console.log(search);
+
+>>>>>>> 5a6aeaab4211353135795210a36afd6cc1c051d4
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         const searchValue = e.target.elements["default-search"].value;
@@ -79,6 +85,7 @@ function JobCards({ jobs }) {
                             <JobCard
                                 key={job.id}
                                 id={job.id}
+                                image_upload={job.image_upload}
                                 title={job.jtitle}
                                 jdescription={job.jdescription}
                                 employer={job.employer}
