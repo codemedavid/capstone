@@ -12,6 +12,7 @@ function JobCards({ jobs }) {
         workFromHome: false,
     });
 
+    console.log(jobs);
     console.log(search);
 
     const handleSearchSubmit = (e) => {
@@ -85,6 +86,7 @@ function JobCards({ jobs }) {
                             <JobCard
                                 key={job.id}
                                 id={job.id}
+                                image_upload={job.image_upload}
                                 title={job.jtitle}
                                 jdescription={job.jdescription}
                                 employer={job.employer}

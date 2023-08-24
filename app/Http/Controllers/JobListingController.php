@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Joblisting;
+use App\Models\CreateJob;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -11,7 +11,7 @@ class JobListingController extends Controller
 {
     public function joblists(): Response
     {
-        $jobs = Joblisting::all();
+        $jobs = CreateJob::all();
         return Inertia::render('Posts/JobListing',['jobs' => $jobs]);
     }
 

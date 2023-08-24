@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Facades\Log;
 
 class CreateJobController extends Controller
 {
+
+    public function createJob(): Response
+    {
+        $createJob = createJob::all(); 
+    }
     /**
      * Display a listing of the resource.
      */
@@ -33,25 +39,33 @@ class CreateJobController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        Log::info($request);
+        $imgUpload = $request->file('image_upload')->store('public/images');
+        Log::info($imgUpload);
+
         $validated = $request->validate([
+            'image_upload' => 'required|image|max:2048',
             'employer' => 'required|string|max:255',
             'vacancy' => 'required|string|max:255',
             'worksched' => 'required|string|max:255',
+            'jdescription' => 'required|string|max:255',
             'typeofwork' => 'required|string|max:255',
             'hrsperweek' => 'required|string|max:255',
             'salary' => 'required|string|max:255',
-            'qualification1' => 'required|string|max:255',
-            'qualification2' => 'required|string|max:255',
-            'qualification3' => 'required|string|max:255',
-            'qualification4' => 'required|string|max:255',
-            'qualification5' => 'required|string|max:255',
-            'skills1' => 'required|string|max:255',
-            'skills2' => 'required|string|max:255',
-            'skills3' => 'required|string|max:255',
-            'skills4' => 'required|string|max:255',
-            'skills5' => 'required|string|max:255',
+            'qualification1' => 'nullable|string|max:255',
+            'qualification2' => 'nullable|string|max:255',
+            'qualification3' => 'nullable|string|max:255',
+            'qualification4' => 'nullable|string|max:255',
+            'qualification5' => 'nullable|string|max:255',
+            'skills1' => 'nullable|string|max:255',
+            'skills2' => 'nullable|string|max:255',
+            'skills3' => 'nullable|string|max:255',
+            'skills4' => 'nullable|string|max:255',
+            'skills5' => 'nullable|string|max:255',
+            'skills6' => 'nullable|string|max:255',
         ]);
 
+        $validated['image_upload'] = str_replace('public/', 'storage/', $imgUpload);
         $request->user()->createJob()->create($validated);
 
         return redirect(route('createJob.index'));
