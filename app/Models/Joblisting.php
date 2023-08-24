@@ -29,5 +29,7 @@ class Joblisting extends Model
         'skills4',
         'skills5',
         'skills6',
+        
+
     ];
 }

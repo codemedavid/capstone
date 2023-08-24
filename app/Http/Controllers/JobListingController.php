@@ -43,6 +43,7 @@ class JobListingController extends Controller
         'skills4' => 'nullable|string',
         'skills5' => 'nullable|string',
         'skills6' => 'nullable|string',
+        
     ]);
 
     $job = new Joblisting();
