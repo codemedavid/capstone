@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('create_jobs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('image_upload');
             $table->string('employer');
             $table->string('vacancy');
+            $table->string('jdescription');
             $table->string('worksched');
             $table->string('typeofwork');
             $table->string('hrsperweek');
@@ -30,6 +32,7 @@ return new class extends Migration
             $table->string('skills3');
             $table->string('skills4');
             $table->string('skills5');
+            $table->string('skills6');
             $table->timestamps();
         });
     }

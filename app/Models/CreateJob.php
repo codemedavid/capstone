@@ -11,9 +11,11 @@ class CreateJob extends Model
     use HasFactory;
 
     protected $fillable = [
+        'image_upload',
         'employer',
         'vacancy',
         'worksched',
+        'jdescription',
         'typeofwork',
         'hrsperweek',
         'salary',
@@ -27,6 +29,7 @@ class CreateJob extends Model
         'skills3',
         'skills4',
         'skills5',
+        'skills6',
 
         
     ];
